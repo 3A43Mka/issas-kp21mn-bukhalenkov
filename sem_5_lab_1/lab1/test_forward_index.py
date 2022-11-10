@@ -7,6 +7,14 @@ documents = json.load(f)
 built_forward_index = build_forward_index(documents)
 
 
+def test_index_structure():
+    assert built_forward_index == [
+        {'id': 1, 'words': ['opinions', 'resolved', 'friendly', 'sufficient', 'law', 'chatty', 'chief', 'attention']},
+        {'id': 2, 'words': ['delicate', 'landlord', 'dashwood', 'farther', 'frankness', 'juvenile', 'chief']},
+        {'id': 3, 'words': ['tiled', 'attention', 'cold', 'sake', 'assure', 'performed', 'discourse', 'marriage', 'blessing']},
+        {'id': 4, 'words': ['greatest', 'performed', 'invitation', 'difficulty', 'solicitude', 'attention']}]
+
+
 def test1():
     assert search_in_forward_index(built_forward_index, 'performed') == [3, 4]
 
